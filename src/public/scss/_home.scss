@@ -1,0 +1,351 @@
+
+#main-container {
+    overflow: auto;
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+    position: relative;
+}
+
+.page-content {
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+
+
+.content-heading {
+    text-align: right;
+    padding-right: 100px;
+
+    h2 {
+        margin: 20px;
+        font-size: 3em;
+    }
+}
+
+
+.btn {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    outline: none;
+
+    &:hover {
+        border: 2px solid $hoverColor;
+        color: $hoverColor;
+    }
+
+    &:active {
+        transform: scale(0.95, 0.95);
+    }
+}
+
+
+
+
+
+
+// Content area 1
+
+.parallax-window:first-of-type {
+    min-height: 600px;
+}
+
+#heading-container {
+    position: relative;
+    text-align: right;
+    top: 150px;
+    right: 100px;
+
+    #heading-main {
+        color: white;
+        font-size: 5em;
+        margin: 0;
+    }
+
+    #subheading {
+        color: white;
+        font-size: 3em;
+        margin: 0;
+    }
+}
+
+
+#btn-nav {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url(/res/svg/icon_handle.svg);
+    z-index: 1000;
+
+    &:hover {
+        cursor: pointer;
+        background-image: url(/res/svg/icon_handle_hover.svg);
+    }
+
+    &:active {
+        transform: scale(0.95, 0.95);
+    }
+}
+
+
+#nav-bar {
+    position: absolute;
+    top: 0;
+    left: -400px;
+    width: 350px;
+    height: 610px;
+    background-repeat: no-repeat;
+    background-image: url(/res/svg/icon_nav_area.svg);
+
+    #nav-bar-links {
+        position: relative;
+        top: 80px;
+        left: 20px;
+        width: 120px;
+
+        > a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            display: block;
+            line-height: 50px;
+
+            &:hover {
+                color: $hoverColor;
+            }
+
+            &:active {
+                transform: scale(0.95, 0.95);
+            }
+        }
+    }
+}
+
+
+#btn-login {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+
+
+
+
+
+
+
+// Content area 2
+
+#about-content {
+    float: left;
+    width: 50%;
+
+    .content-heading {
+        text-align: left;
+        padding-left: 100px;
+
+        > h2 {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+#about-video {
+    float: right;
+    width: 50%;
+    text-align: center;
+
+    video {
+        width: 90%;
+        margin: 20px 0;
+    }
+}
+
+
+
+
+
+
+// Content area 4
+
+@mixin grid-item($beforeWidth, $image, $hoverImage) {
+    height: 250px;
+    margin: 10px 0;
+    background-color: #030303;
+
+    > div {
+        height: 100%;
+        float: left;
+    }
+
+    .grid-item-before {
+        text-align: center;
+        width: $beforeWidth;
+        display: table;
+    }
+
+    .grid-item-image {
+        width: 25%;
+        background-position: center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-image: $image;
+    }
+
+    .grid-item-after {
+        text-align: center;
+        width: calc(75% - #{$beforeWidth});
+        display: table;
+    }
+
+    .grid-item-text {
+        text-shadow: 5px 5px 10px blue, -5px -5px 10px blue;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 20px;
+    }
+
+    &:hover {
+        .grid-item-image {
+            background-image: $hoverImage;
+        }
+
+        .grid-item-text {
+            text-shadow: none;
+        }
+    }
+}
+
+
+#grid-item-1 {
+    @include grid-item(0%, url(/res/images/p/p4a.jpg), url(/res/images/p/p4b.jpg));
+}
+
+#grid-item-2 {
+    @include grid-item(25%, url(/res/images/p/p1a.jpg), url(/res/images/p/p1b.jpg));
+}
+
+#grid-item-3 {
+    @include grid-item(50%, url(/res/images/p/p3a.jpg), url(/res/images/p/p3b.jpg));
+}
+
+#grid-item-4 {
+    @include grid-item(75%, url(/res/images/p/p2a.jpg), url(/res/images/p/p2b.jpg));
+}
+
+
+
+
+
+
+
+// Content Area 6
+.page-footer {
+    height: 200px;
+}
+
+#footer-links {
+    white-space: nowrap;
+
+    > a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.5em;
+        line-height: 50px;
+        margin: 0 30px;
+
+        &:hover {
+            color: $hoverColor;
+        }
+
+        &:active {
+            transform: scale(0.95, 0.95);
+        }
+    }
+}
+
+
+
+
+
+
+// Dialog
+#dialog-container {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: url(/res/svg/icon_background_dialog.svg);
+    background-repeat: no-repeat;
+
+
+    #dialog-btn-close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        height: 25px;
+        width: 25px;
+        background-image: url(/res/svg/icon_close.svg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        &:hover {
+            background-image: url(/res/svg/icon_close_hover.svg);
+            cursor: pointer;
+        }
+    }
+
+
+    #login-container {
+        color: white;
+
+        h2 {
+            margin-left: -90px;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        label {
+            height: 40px;
+            line-height: 40px;
+        }
+
+        input {
+            border: 0;
+            height: 40px;
+            border-radius: 2px;
+            margin: 10px;
+        }
+
+        button {
+            margin-top: 5px;
+            margin-right: -60px;
+            float: right;
+        }
+
+        #input1 {
+            margin-left: -30px;
+        }
+
+        #input2 {
+            margin-left: 30px;
+        }
+    }
+}
