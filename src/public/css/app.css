@@ -103,11 +103,13 @@
 
 #about-content {
   float: left;
-  width: 50%; }
+  width: 50%;
+  padding: 20px; }
   #about-content .content-heading {
     text-align: left;
     padding-left: 100px; }
     #about-content .content-heading > h2 {
+      margin-top: 0;
       margin-bottom: 5px; }
 
 #about-video {
@@ -116,7 +118,17 @@
   text-align: center; }
   #about-video video {
     width: 90%;
+    height: 90%;
     margin: 20px 0; }
+
+@media (max-width: 1300px) {
+  #about-content {
+    float: none;
+    width: auto; }
+  #about-video {
+    float: none;
+    width: auto;
+    height: 290px; } }
 
 #grid-item-1 {
   height: 250px;
