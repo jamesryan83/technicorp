@@ -1,3 +1,3 @@
 A demo home page
 
-[Website is here](http://technicorp.azurewebsites.net/)
+[Website is here](https://jamesryan83.github.io/technicorp/)
