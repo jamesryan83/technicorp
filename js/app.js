@@ -4,14 +4,14 @@ window.onload = function () {
 
     // load svgs and images that arean't loaded on startup
     var urls = [
-        "/res/svg/icon_background_dialog.svg",
-        "/res/svg/icon_close_hover.svg",
-        "/res/svg/icon_handle_hover.svg",
-        "/res/svg/icon_nav_area.svg",
-        "/res/images/p/p1b.jpg",
-        "/res/images/p/p2b.jpg",
-        "/res/images/p/p3b.jpg",
-        "/res/images/p/p4b.jpg"
+        "res/svg/icon_background_dialog.svg",
+        "res/svg/icon_close_hover.svg",
+        "res/svg/icon_handle_hover.svg",
+        "res/svg/icon_nav_area.svg",
+        "res/images/p/p1b.jpg",
+        "res/images/p/p2b.jpg",
+        "res/images/p/p3b.jpg",
+        "res/images/p/p4b.jpg"
     ]
 
     for (var i = 0; i < urls.length; i++) {
